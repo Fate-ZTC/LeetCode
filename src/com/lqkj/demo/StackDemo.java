@@ -125,7 +125,7 @@ public class StackDemo {
         //数栈
         StackDemo numberStck = new StackDemo(10);
         StackDemo exStack = new StackDemo(10);
-        String express = "7*2+5*2";
+        String express = "7*3+5*2";
         char[] chars = express.toCharArray();
         //将表达式扫描入栈
         for (int i = 0; i < chars.length; i++) {
@@ -142,11 +142,19 @@ public class StackDemo {
                     exStack.push(chars[i]);
                 }
             }else {
-                numberStck.push(chars[i]);
+                numberStck.push(chars[i] - 48);
             }
         }
-        numberStck.list();
-        exStack.list();
+        while(true) {
+            if (exStack.empty()) {
+                break;
+            }
+            int num3 = numberStck.pop();
+            int num4 = numberStck.pop();
+            int oper = exStack.pop();
+            int res = numberStck.cal(num3, num4, oper);
+            numberStck.push(res);
+        }
         System.out.printf("计算的结果为:%d", numberStck.pop());
     }
 }
