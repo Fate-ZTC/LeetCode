@@ -50,7 +50,7 @@ class Foo {
 
 
     public static void main(String[] args) {
-        Thread threadFirst = new Thread(new Runnable() {
+        /*Thread threadFirst = new Thread(new Runnable() {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName() + "say Hello");
@@ -61,6 +61,16 @@ class Foo {
         MyThread myThread1 = new MyThread();
         myThread1.start();
         MyThread myThread2 = new MyThread();
-        myThread2.start();
+        myThread2.start();*/
+
     }
+
+    /*public  int fun(int n) {
+        if (n > 100) {
+            return ;
+        }
+        return ;
+    }*/
+
+
 }
